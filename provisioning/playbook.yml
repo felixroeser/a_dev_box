@@ -1,0 +1,9 @@
+---
+- hosts: all
+  sudo: true
+  roles:
+    - role: common
+    - role: nodejs
+    - role: ruby
+    - role: phantomjs
+    - role: cassandra

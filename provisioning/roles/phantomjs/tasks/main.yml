@@ -1,0 +1,4 @@
+---
+- name: Install phantomjs
+  shell: cd /tmp && curl -L -O https://bitbucket.org/ariya/phantomjs/downloads/phantomjs-{{phantomversion}}-linux-x86_64.tar.bz2 && mv phantomjs-{{phantomversion}}-linux-x86_64.tar.bz2 /usr/local/share/. && cd /usr/local/share/ && tar xjf phantomjs-{{phantomversion}}-linux-x86_64.tar.bz2 && ln -s /usr/local/share/phantomjs-{{phantomversion}}-linux-x86_64 /usr/local/share/phantomjs && ln -s /usr/local/share/phantomjs/bin/phantomjs /usr/local/bin/phantomjs creates=/usr/local/bin/phantomjs
+  sudo: yes

@@ -1,0 +1,21 @@
+---
+- apt_repository: repo='ppa:brightbox/ruby-ng' update_cache=yes
+- apt: pkg={{item}} state=latest install_recommends=no
+  with_items:
+  - build-essential
+  - gawk
+  - libyaml-dev
+  - libssl-dev
+  - zlib1g-dev
+  - libreadline-dev
+  - ruby2.1
+  - rubygems
+  - ruby2.1-dev
+  - sqlite3
+  - libsqlite3-dev
+- name: install bundler, rake, foreman
+  shell: gem2.1 install --no-ri --no-rdoc bundler {{item}} creates=/usr/local/bin/{{item}}
+  with_items:
+    - bundler
+    - rake
+    - foreman

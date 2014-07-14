@@ -1,0 +1,21 @@
+---
+- apt: update_cache=yes cache_valid_time=3600
+- apt_repository: repo='ppa:git-core' update_cache=yes
+- apt: pkg={{item}} state=latest install_recommends=no
+  with_items:
+  - python-pycurl
+  - python-psycopg2
+  - git-core
+  - tmux
+  - ufw
+  - htop
+  - mc
+  - zsh
+  - vim
+  - curl
+- name: generate locale
+  command: /usr/sbin/locale-gen {{locale}}
+- name: set locale to locale
+  command: /usr/sbin/update-locale LANG={{locale}} LC_ALL={{locale}}
+- name: Set zsh as default shell
+  user: name=vagrant shell=/bin/zsh  

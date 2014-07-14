@@ -1,0 +1,24 @@
+- name: add key
+  apt_key: id=ACCC4CF8 url=http://apt.postgresql.org/pub/repos/apt/ACCC4CF8.asc state=present
+- name: add repo
+  apt_repository: repo='deb http://apt.postgresql.org/pub/repos/apt/ precise-pgdg main' state=present update_cache=yes
+- name: install package
+  apt: pkg={{item}} state=latest install_recommends=no
+  with_items:
+    - postgresql-9.3
+    - postgresql-contrib
+    - pgadmin3
+    - libpq-dev
+- name: ensure database user
+  sudo_user: postgres
+  postgresql_user: login_user=postgres user=vagrant password=test123 role_attr_flags=CREATEDB,SUPERUSER,LOGIN
+- name: ensure database
+  sudo_user: postgres
+  postgresql_db: name=yeahbaby_{{item}}
+                 encoding='UTF-8'
+                 template='template0'
+                 state=present
+                 owner=postgres
+  with_items:
+    - test
+    - development
