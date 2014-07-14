@@ -1,4 +1,4 @@
-# Simple vagrant ruby, node, cassandra dev box
+# Simple vagrant ruby, node, scala, cassandra dev box
 
 ## Installation
 
@@ -14,4 +14,5 @@ TBA
 
 ## Credits
 
-provisioning/roles/cassandra forked from  https://github.com/Kami/ansible-cassandra
+provisioning/roles/cassandra forked from https://github.com/Kami/ansible-cassandra
+provisioning/roles/scala and sbt forked from https://github.com/snowplow/ansible-playbooks

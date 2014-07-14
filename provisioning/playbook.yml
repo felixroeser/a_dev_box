@@ -6,4 +6,5 @@
     - role: nodejs
     - role: ruby
     - role: phantomjs
+    - role: sbt
     - role: cassandra

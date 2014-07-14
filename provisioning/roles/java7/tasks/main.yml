@@ -2,11 +2,12 @@
 - name: Install JDK & JRE
   apt: pkg={{ item }} state=installed update-cache=yes
   register: jdk_installed
-  with_items: cassandra.dependencies
+  with_items:
+    - 'openjdk-7-jre'
+    - 'openjdk-7-jdk'
   tags:
     - packages
     - dependencies
-
 - name: Update java alternatives
   action: command update-java-alternatives -s java-1.7.0-openjdk-amd64
   when: jdk_installed.changed

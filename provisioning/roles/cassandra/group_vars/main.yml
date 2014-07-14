@@ -5,9 +5,6 @@ cassandra:
 
   repo_key_url: 'http://keyserver.ubuntu.com/pks/lookup?op=get&fingerprint=on&search=0x4BD736A82B5C1B00'
   repo_key_file: '4BD736A82B5C1B00.gpg'
-  dependencies:
-    - 'openjdk-7-jre'
-    - 'openjdk-7-jdk'
 
 cassandra_1_2:
   repo: 'deb http://www.apache.org/dist/cassandra/debian 12x main'

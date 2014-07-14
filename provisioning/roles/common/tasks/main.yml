@@ -18,4 +18,4 @@
 - name: set locale to locale
   command: /usr/sbin/update-locale LANG={{locale}} LC_ALL={{locale}}
 - name: Set zsh as default shell
-  user: name=vagrant shell=/bin/zsh  
+  user: name=vagrant shell=/bin/zsh
