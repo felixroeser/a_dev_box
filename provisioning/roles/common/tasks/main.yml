@@ -6,6 +6,7 @@
   - python-pycurl
   - python-psycopg2
   - git-core
+  - tig
   - tmux
   - ufw
   - htop
