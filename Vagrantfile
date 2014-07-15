@@ -12,19 +12,17 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.box = 'control'
   config.vm.box_url = "http://files.vagrantup.com/precise64.box"
 
-  # [5000, 5001, 9000].each do |port|
-  #   config.vm.network :forwarded_port, guest: port, host: port
-  # end
-
   # Create a private network, which allows host-only access to the machine
   # using a specific IP.
 
   # Create a public network, which generally matched to bridged network.
   # Bridged networks make the machine appear as another physical device on
   # your network.
-  # config.vm.network :public_network, ip: '192.168.1.220'
   config.vm.network :private_network, ip: "10.1.0.30"
-  config.vm.network "forwarded_port", guest: 3000, host: 3000
+
+  [3000, 9000].each do |port|
+    config.vm.network :forwarded_port, guest: port, host: port
+  end
 
   # If true, then any SSH connections made will enable agent forwarding.
   # Default value: false
@@ -40,7 +38,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   config.vm.provider :virtualbox do |vb|
     # Use VBoxManage to customize the VM. For example to change memory:
-    vb.customize ["modifyvm", :id, "--memory", "4096", "--cpus", 2]
+    vb.customize ["modifyvm", :id, "--memory", ENV['DEVBOXMEM'] || 4096, "--cpus", ENV['DEVBOXCPUS'] || 2 ]
     vb.customize ["modifyvm", :id, "--natdnsproxy1", "off"]
     vb.customize ["modifyvm", :id, "--natdnshostresolver1", "off"]
   end

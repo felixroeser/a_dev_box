@@ -7,6 +7,7 @@ and some plugins
 
     $ vagrant plugin install vagrant-omnibus --plugin-version '>= 1.4.1'
     $ vagrant plugin install vagrant-berkshelf --plugin-version '>= 2.0.1'
+    $ DEVBOXCPUS=2 DEVBOXMEMORY=4096 vagrant up
 
 Clone and install
 
