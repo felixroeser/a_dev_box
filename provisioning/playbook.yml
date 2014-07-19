@@ -8,3 +8,4 @@
     - role: phantomjs
     - role: sbt
     - role: cassandra
+    - role: redis
