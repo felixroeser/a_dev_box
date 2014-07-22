@@ -9,15 +9,13 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # options are documented and commented below. For a complete reference,
   # please see the online documentation at vagrantup.com.
 
-  config.vm.box = 'control'
-  config.vm.box_url = "http://files.vagrantup.com/precise64.box"
+  config.vm.box = "phusion-open-ubuntu-14.04-amd64"
+  config.vm.box_url = "https://oss-binaries.phusionpassenger.com/vagrant/boxes/latest/ubuntu-14.04-amd64-vbox.box"
+
+  config.vm.hostname = 'gkhdev'
 
   # Create a private network, which allows host-only access to the machine
   # using a specific IP.
-
-  # Create a public network, which generally matched to bridged network.
-  # Bridged networks make the machine appear as another physical device on
-  # your network.
   config.vm.network :private_network, ip: "10.1.0.30"
 
   [3000, 9000].each do |port|

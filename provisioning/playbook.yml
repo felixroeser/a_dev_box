@@ -3,6 +3,7 @@
   sudo: true
   roles:
     - role: common
+    - role: docker
     - role: nodejs
     - role: ruby
     - role: phantomjs

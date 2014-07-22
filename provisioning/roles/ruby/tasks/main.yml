@@ -9,7 +9,6 @@
   - zlib1g-dev
   - libreadline-dev
   - ruby2.1
-  - rubygems
   - ruby2.1-dev
   - sqlite3
   - libsqlite3-dev
@@ -19,3 +18,4 @@
     - bundler
     - rake
     - foreman
+    - heel

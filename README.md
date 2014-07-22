@@ -11,6 +11,20 @@ and some plugins
     $ cd devbox
     $ DEVBOXCPUS=2 DEVBOXMEMORY=4096 vagrant up
 
+    # if provisioning fails: (package list might be out of date)
+    # vagrant ssh
+    # sudo apt-get update
+    # exit
+    # vagrant provision
+
+## Docker Details
+
+Image basis http://blog.phusion.nl/2013/11/08/docker-friendly-vagrant-boxes/
+
+Todo install https://github.com/shipyard/shipyard
+
+TBA
+
 ## Credits
 
 provisioning/roles/cassandra forked from https://github.com/Kami/ansible-cassandra
