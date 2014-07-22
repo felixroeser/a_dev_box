@@ -1,6 +1,6 @@
 ---
 - name: Download SBT {{sbt_version}}
-  get_url: dest=/var/local/ansible-cache/sbt-{{sbt_version}} url=http://dl.bintray.com/sbt/native-packages/sbt/{{sbt_version}}/sbt-{{sbt_version}}.tgz
+  get_url: dest=/var/local/ansible-cache/sbt-{{sbt_version}}.tgz url=http://dl.bintray.com/sbt/native-packages/sbt/{{sbt_version}}/sbt-{{sbt_version}}.tgz
   sudo: yes
   tags: [sbt]
 
