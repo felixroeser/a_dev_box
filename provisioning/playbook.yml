@@ -8,5 +8,6 @@
     - role: ruby
     - role: phantomjs
     - role: sbt
+    - role: golang
     - role: cassandra
     - role: redis
