@@ -3,3 +3,6 @@
 - apt: pkg={{item}} state=latest install_recommends=no
   with_items:
   - nodejs
+- npm: name={{item}} global=true
+  with_items:
+  - coffee-script
