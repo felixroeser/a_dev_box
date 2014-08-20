@@ -5,6 +5,8 @@
   - build-essential
   - gawk
   - libyaml-dev
+  - libxslt-dev
+  - libxml2-dev
   - libssl-dev
   - zlib1g-dev
   - libreadline-dev
