@@ -1,0 +1,11 @@
+---
+- apt: update_cache=yes cache_valid_time=3600
+- apt: pkg={{item}} state=latest install_recommends=no
+  with_items:
+    - fontforge
+    - ttfautohint
+- shell: npm install -g {{item}} --save-dev creates=/usr/lib/node_modules/{{item}}
+  with_items:
+    - grunt
+    - grunt-cli
+    - grunt-webfont

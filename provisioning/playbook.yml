@@ -4,7 +4,7 @@
   roles:
     - role: common
     - role: docker
-    - role: nodejs
+    - role: grunt
     - role: ruby
     - role: phantomjs
     - role: sbt
