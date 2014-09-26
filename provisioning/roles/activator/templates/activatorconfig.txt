@@ -1,0 +1,2 @@
+-Dhttp.port=8888
+-Dhttp.address=0.0.0.0

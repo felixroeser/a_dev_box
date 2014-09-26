@@ -1,0 +1,14 @@
+---
+- name: Typesafe Activator | Download zip
+  get_url: url=http://downloads.typesafe.com/typesafe-activator/{{ activator_version }}/typesafe-activator-{{ activator_version }}.zip
+           dest=/usr/local/src/typesafe-activator-{{ activator_version }}.zip
+           sha256sum={{ activator_zip_checksum }}
+  register: result
+- name: Typesafe Activator | Unzip
+  unarchive: src=/usr/local/src/typesafe-activator-{{ activator_version }}.zip dest=/opt copy=no
+  when: result|changed
+- name: change ownership
+  action: file state=directory recurse=yes path=/opt/activator-{{ activator_version }} owner=vagrant
+- file: src=/opt/activator-{{ activator_version }} dest=/opt/activator state=link owner=vagrant
+- name: Typesafe Activator | Template
+  template: src=activatorconfig.txt dest=/home/vagrant/.activator/activatorconfig.txt owner=vagrant mode=0644

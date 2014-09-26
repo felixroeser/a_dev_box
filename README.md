@@ -23,6 +23,16 @@ Image basis http://blog.phusion.nl/2013/11/08/docker-friendly-vagrant-boxes/
 
 Todo install https://github.com/shipyard/shipyard
 
+## Typesafe Activator
+
+https://typesafe.com/activator/docs
+
+Startup:
+
+    cd /opt/activator
+    ./activator ui
+    # Open localhost:8888 in your browser
+
 TBA
 
 ## Credits
