@@ -10,5 +10,6 @@
 - name: change ownership
   action: file state=directory recurse=yes path=/opt/activator-{{ activator_version }} owner=vagrant
 - file: src=/opt/activator-{{ activator_version }} dest=/opt/activator state=link owner=vagrant
+- file: path=/home/vagrant/.activator owner=vagrant state=directory
 - name: Typesafe Activator | Template
   template: src=activatorconfig.txt dest=/home/vagrant/.activator/activatorconfig.txt owner=vagrant mode=0644
