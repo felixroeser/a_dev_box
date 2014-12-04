@@ -1,5 +1,12 @@
 # Simple vagrant ruby, node, scala, cassandra dev box
 
+Installs:
+
+* Ruby, Go, Node, Scala, Typesafe Activator
+* Grunt, Phantomjs
+* Cassandra, Redis
+* Docker
+
 ## Requirements
 
 * [Virtualbox](https://www.virtualbox.org/wiki/Downloads)
