@@ -9,3 +9,4 @@
     - grunt
     - grunt-cli
     - grunt-webfont
+    - browser-sync
