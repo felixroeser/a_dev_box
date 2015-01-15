@@ -11,4 +11,5 @@
     - role: go
     - role: cassandra
     - role: redis
+    - role: elasticsearch
     - role: activator

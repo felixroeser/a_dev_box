@@ -1,0 +1,7 @@
+---
+- name: Add repository key
+  apt_key: keyserver=keyserver.ubuntu.com id=D88E42B4 state=present
+- name: Add ES repository
+  apt_repository: repo="deb http://packages.elasticsearch.org/elasticsearch/1.4/debian stable main" state=present update_cache=yes
+- apt: pkg=elasticsearch state=present update-cache=yes
+- service: name=elasticsearch state=started
