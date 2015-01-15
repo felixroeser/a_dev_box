@@ -2,9 +2,9 @@
 
 Installs:
 
-* Ruby, Go, Node, Scala, Typesafe Activator
+* Ruby, Go, Node, Scala 2.11, Java8, Typesafe Activator
 * Grunt, Phantomjs
-* Cassandra, Redis
+* Cassandra, Redis, Elasticsearch
 * Docker
 
 ## Requirements
