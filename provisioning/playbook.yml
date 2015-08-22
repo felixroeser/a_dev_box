@@ -10,6 +10,6 @@
     - role: sbt
     - role: go
     - role: cassandra
-    - role: redis
-    - role: elasticsearch
-    - role: activator
+    # - role: redis
+    # - role: elasticsearch
+    # - role: activator

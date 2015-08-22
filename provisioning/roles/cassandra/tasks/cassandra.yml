@@ -1,9 +1,11 @@
 ---
 - name: Install Cassandra
-  apt: pkg=cassandra={{cassandra.version}} state=present update-cache=yes
+  apt: pkg=cassandra={{cassandra.version}} state=present update-cache=yes force=true
   register: cassandra_install
   tags:
     - packages
+
+- apt: pkg=cassandra-tools force=true
 
 - name: Install Cassandra config file
   template: src=cassandra-{{cassandra.version_branch}}.yaml dest=/etc/cassandra/cassandra.yaml

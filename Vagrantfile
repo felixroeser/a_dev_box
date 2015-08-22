@@ -12,13 +12,13 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.box = "phusion-open-ubuntu-14.04-amd64"
   config.vm.box_url = "https://oss-binaries.phusionpassenger.com/vagrant/boxes/latest/ubuntu-14.04-amd64-vbox.box"
 
-  config.vm.hostname = 'gkhdev'
+  config.vm.hostname = 'hal9000'
 
   # Create a private network, which allows host-only access to the machine
   # using a specific IP.
   config.vm.network :private_network, ip: "10.1.0.35"
 
-  [3000, 5000, 5400, 5422, 5450, 8080, 8081, 8100, 8888, 9000].each do |port|
+  [3000, 4567, 8080, 9042].each do |port|
     config.vm.network :forwarded_port, guest: port, host: port
   end
 

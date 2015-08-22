@@ -10,12 +10,12 @@
   - libssl-dev
   - zlib1g-dev
   - libreadline-dev
-  - ruby2.1
-  - ruby2.1-dev
+  - ruby2.2
+  - ruby2.2-dev
   - sqlite3
   - libsqlite3-dev
 - name: install bundler, rake, foreman
-  shell: gem2.1 install --no-ri --no-rdoc bundler {{item}} creates=/usr/local/bin/{{item}}
+  shell: gem2.2 install --no-ri --no-rdoc bundler {{item}} creates=/usr/local/bin/{{item}}
   with_items:
     - bundler
     - rake
