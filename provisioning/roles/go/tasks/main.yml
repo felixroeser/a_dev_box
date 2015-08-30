@@ -17,7 +17,7 @@
   lineinfile: dest=/home/vagrant/.zshrc line="export PATH=$PATH:/usr/local/go/bin"
 
 - name: Add GO env to .zsh II
-  lineinfile: dest=/home/vagrant/.zshrc line="export GOPATH=$HOME/go"
+  lineinfile: dest=/home/vagrant/.zshrc line="export GOPATH=/vagrant/go"
 
 - name: Add GO env to .zsh III
   lineinfile: dest=/home/vagrant/.zshrc line="export PATH=$GOPATH/bin:$PATH"

@@ -2,9 +2,9 @@
 
 Installs:
 
-* Ruby, Go, Node, Scala 2.11, Java8, Typesafe Activator
+* Ruby, Go, Node, Scala 2.11, Java8
 * Grunt, Phantomjs
-* Cassandra, Redis, Elasticsearch
+* Cassandra , -Redis, Elasticsearch-
 * Docker
 
 ## Requirements
@@ -13,14 +13,14 @@ Installs:
 * [Vagrant](http://www.vagrantup.com/downloads.html) along with some plugins
   * ```vagrant plugin install vagrant-omnibus --plugin-version '>= 1.4.1'```
   * ```vagrant plugin install vagrant-berkshelf --plugin-version '>= 2.0.1'```
-* nfs-server Paket unter Linux
+* nfs-server needed with Ubuntu
 * ansible
   * OSX: brew install ansible
   * Ubuntu: ppa:ansible/ansible
 
 ## Installation
 
-    $ git clone git@bitbucket.org:byteforscher/local_dev_box.git devbox
+    $ git clone git@github.com:felixroeser/a_dev_box.git devbox
     $ cd devbox
     $ DEVBOXCPUS=2 DEVBOXMEMORY=4096 vagrant up
 
@@ -29,23 +29,6 @@ Installs:
     # sudo apt-get update
     # exit
     # vagrant provision
-
-## Docker Details - WIP
-
-Image basis http://blog.phusion.nl/2013/11/08/docker-friendly-vagrant-boxes/
-Todo install https://github.com/shipyard/shipyard
-
-## Typesafe Activator
-
-https://typesafe.com/activator/docs
-
-Startup:
-
-    cd /opt/activator
-    ./activator ui
-    # Open localhost:8888 in your browser
-
-TBA
 
 ## Credits
 

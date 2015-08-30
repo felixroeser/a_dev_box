@@ -21,6 +21,8 @@ cluster_name: '{{ config.cluster_name }}'
 # a random token, which will lead to hot spots.
 initial_token:
 
+num_tokens: 256
+
 # See http://wiki.apache.org/cassandra/HintedHandoff
 hinted_handoff_enabled: true
 # this defines the maximum amount of time a dead host will have hints
@@ -52,7 +54,7 @@ authenticator: org.apache.cassandra.auth.AllowAllAuthenticator
 #
 # See http://wiki.apache.org/cassandra/Operations for more on
 # partitioners and token selection.
-partitioner: org.apache.cassandra.dht.RandomPartitioner
+partitioner: org.apache.cassandra.dht.Murmur3Partitioner
 
 # directories where Cassandra should store data on disk.
 data_file_directories:
