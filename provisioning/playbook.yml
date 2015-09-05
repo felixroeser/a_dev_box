@@ -3,13 +3,13 @@
   sudo: true
   roles:
     - role: common
-    - role: docker
     - role: grunt
     - role: ruby
     - role: phantomjs
     - role: sbt
     - role: go
+    - role: nodejs
     - role: cassandra
-    # - role: redis
+    - role: redis
     # - role: elasticsearch
     # - role: activator

@@ -1,5 +1,6 @@
 # -*- mode: ruby -*-
 # vi: set ft=ruby :
+require_relative 'support'
 
 # Vagrantfile API/syntax version. Don't touch unless you know what you're doing!
 VAGRANTFILE_API_VERSION = "2"
@@ -41,8 +42,12 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     vb.customize ["modifyvm", :id, "--natdnshostresolver1", "off"]
   end
 
-  config.vm.provision :ansible do |ansible|
-    ansible.playbook = 'provisioning/playbook.yml'
-    ansible.verbose = 'vv'
+  unless OS.windows?
+    config.vm.provision :ansible do |ansible|
+      ansible.playbook = 'provisioning/playbook.yml'
+      ansible.verbose = 'vv'
+    end
+  else
+    config.vm.provision "shell", path: "bootstrap.sh"
   end
 end

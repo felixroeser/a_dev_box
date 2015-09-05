@@ -6,7 +6,7 @@
     - apt
 
 - name: Add repository key
-  apt_key: data="{{ lookup('file', '4BD736A82B5C1B00.gpg') }}"  state=present
+  apt_key: url=http://debian.datastax.com/debian/repo_key state=present
   tags:
     - apt
 

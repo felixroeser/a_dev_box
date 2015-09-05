@@ -17,6 +17,7 @@ Installs:
 * ansible
   * OSX: brew install ansible
   * Ubuntu: ppa:ansible/ansible
+  * Windows: will be run within the guest vm
 
 ## Installation
 
