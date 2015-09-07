@@ -9,6 +9,7 @@
     - role: sbt
     - role: go
     - role: nodejs
+    - role: elixir
     - role: cassandra
     - role: redis
     # - role: elasticsearch

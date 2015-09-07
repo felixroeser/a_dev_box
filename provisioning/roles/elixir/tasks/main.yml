@@ -1,0 +1,17 @@
+---
+- name: Check if Erlang Solutions repo is installed
+  command: dpkg-query -W erlang-solutions_1.0
+  register: erlang_solutions_check_deb
+  failed_when: erlang_solutions_check_deb.rc > 1
+  changed_when: erlang_solutions_check_deb.rc == 1
+- name: Download Erlang Solutions
+  get_url:
+    url="https://packages.erlang-solutions.com/erlang-solutions_1.0_all.deb"
+    dest="/usr/local/src/erlang-solutions_1.0_all.deb"
+  when: erlang_solutions_check_deb.rc == 1
+- name: Install Erlang solutions
+  apt: deb="/usr/local/src/erlang-solutions_1.0_all.deb"
+  when: erlang_solutions_check_deb.rc == 1
+- apt: pkg={{item}} state=latest install_recommends=no update_cache=yes
+  with_items:
+  - elixir
