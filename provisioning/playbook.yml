@@ -12,5 +12,6 @@
     - role: elixir
     - role: cassandra
     - role: redis
+    - role: mariadb
     # - role: elasticsearch
     # - role: activator

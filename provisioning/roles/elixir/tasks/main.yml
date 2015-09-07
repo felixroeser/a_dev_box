@@ -14,5 +14,6 @@
   when: erlang_solutions_check_deb.rc == 1
 - apt: pkg={{item}} state=latest install_recommends=no update_cache=yes
   with_items:
-  - elixir
+  - erlang
   - erlang-dev
+  - elixir

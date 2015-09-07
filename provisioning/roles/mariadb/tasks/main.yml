@@ -1,0 +1,10 @@
+---
+- apt: pkg={{item}} state=latest install_recommends=no update_cache=yes
+  with_items:
+  - mariadb-server
+  - mariadb-client
+- name: Start Mariadb
+  service:
+    name: mariadb
+    state: started
+    enabled: true
