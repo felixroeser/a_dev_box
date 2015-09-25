@@ -19,7 +19,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # using a specific IP.
   config.vm.network :private_network, ip: "10.1.0.35"
 
-  [3000, 4567, 8080, 9042].each do |port|
+  [3000, 4567, 8080, 8888, 9042].each do |port|
     config.vm.network :forwarded_port, guest: port, host: port
   end
 
