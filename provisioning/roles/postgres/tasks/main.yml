@@ -5,20 +5,10 @@
 - name: install package
   apt: pkg={{item}} state=latest install_recommends=no
   with_items:
-    - postgresql-9.3
+    - postgresql-9.4
     - postgresql-contrib
     - pgadmin3
     - libpq-dev
 - name: ensure database user
   sudo_user: postgres
   postgresql_user: login_user=postgres user=vagrant password=test123 role_attr_flags=CREATEDB,SUPERUSER,LOGIN
-- name: ensure database
-  sudo_user: postgres
-  postgresql_db: name=yeahbaby_{{item}}
-                 encoding='UTF-8'
-                 template='template0'
-                 state=present
-                 owner=postgres
-  with_items:
-    - test
-    - development

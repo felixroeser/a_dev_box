@@ -13,5 +13,6 @@
     - role: cassandra
     - role: redis
     - role: mariadb
+    - role: postgres
     # - role: elasticsearch
     # - role: activator
