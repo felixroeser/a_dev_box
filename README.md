@@ -10,14 +10,17 @@ Installs:
 ## Requirements
 
 * [Virtualbox](https://www.virtualbox.org/wiki/Downloads)
-* [Vagrant](http://www.vagrantup.com/downloads.html) along with some plugins
-  * ```vagrant plugin install vagrant-omnibus --plugin-version '>= 1.4.1'```
-  * ```vagrant plugin install vagrant-berkshelf --plugin-version '>= 2.0.1'```
+* [Vagrant](http://www.vagrantup.com/downloads.html)
 * nfs-server needed with Ubuntu
 * ansible
-  * OSX: brew install ansible
   * Ubuntu: ppa:ansible/ansible
   * Windows: will be run within the guest vm
+
+````
+brew cask install virtualbox
+brew cask install vagrant
+brew install ansible
+````
 
 ## Installation
 
